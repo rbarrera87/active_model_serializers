@@ -29,9 +29,7 @@ module ActiveModel
     attr_accessor :object, :scope, :root, :meta_key, :meta, :key_format, :context
 
     def json_key
-      key = root.nil? ? @resource_name : root
-
-      key_format == :lower_camel && key.present? ? key.camelize(:lower) : key
+      key_format == :lower_camel && root.present? ? root.camelize(:lower) : root
     end
 
     def serializer_for(item)

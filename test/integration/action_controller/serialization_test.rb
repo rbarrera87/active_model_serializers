@@ -190,7 +190,7 @@ module ActionController
       def test_render_array
         get :render_array
         assert_equal 'application/json', @response.content_type
-        assert_equal '{"my":[{"name":"Name 1","description":"Description 1"}]}', @response.body
+        assert_equal '[{"name":"Name 1","description":"Description 1"}]', @response.body
       end
     end
 
@@ -206,7 +206,7 @@ module ActionController
       def test_render_array
         get :render_array
         assert_equal 'application/json', @response.content_type
-        assert_equal '{"webLog":[{"name":"Name 1","displayName":"Display Name 1"},{"name":"Name 2","displayName":"Display Name 2"}]}', @response.body
+        assert_equal '[{"name":"Name 1","displayName":"Display Name 1"},{"name":"Name 2","displayName":"Display Name 2"}]', @response.body
       end
     end
 
